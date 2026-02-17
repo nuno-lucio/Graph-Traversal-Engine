@@ -1,4 +1,4 @@
-# Iterative Depth-First Search (DFS) in C++
+# Graph Traversal Engine in C++
 
 This project implements an **iterative DFS** (Depth-First Search).
 
@@ -7,8 +7,8 @@ This project implements an **iterative DFS** (Depth-First Search).
 ## Features
 - Iterative DFS using a stack
 - **Discovery**, **Finishing times** and **Parents** for each vertex
-- Reads graph from standard input
-- Prints results to standard output
+- Reads graph from standard input or file
+- Prints results to standard output or file
 
 ---
 
@@ -32,18 +32,18 @@ vertexID Degree neighbor1 neighbor2 ...
 5 1 6
 6 2 2 5
 ```
-![Example DFS](https://github.com/nuno-lucio/Iterative-DFS/raw/master/examples/example_graph.png)
+![Example Graph](https://github.com/nuno-lucio/Iterative-DFS/raw/master/examples/example_graph.png)
 
 ---
 
 ## Build
 ```
-g++ -std=c++11 -O3 -Wall main.cpp -o DFS
+g++ -std=c++11 -O3 -Wall main.cpp -o GraphEngine
 ```
 
 ---
 
 ## Run
 ```
-./DFS < graph.txt
+./GraphEngine < graph.txt
 ```

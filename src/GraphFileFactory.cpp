@@ -1,3 +1,8 @@
+/**********
+ * Produces Graphs from file
+ * Author: Nuno Lucio
+ **********/
+
 #include "GraphFileFactory.hpp"
 
 #include <fstream>

@@ -7,7 +7,6 @@
 #define GRAPH_HPP
 
 #include <vector>
-#include <memory>
 
 using Vertex = unsigned int;
 

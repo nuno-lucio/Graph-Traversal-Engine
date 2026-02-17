@@ -1,3 +1,8 @@
+/**********
+ * Produces Graphs
+ * Author: Nuno Lucio
+ **********/
+
 #include "GraphFactory.hpp"
 
 Graph GraphFactory::read(std::istream &in)

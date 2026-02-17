@@ -1,3 +1,8 @@
+/**********
+ * Produces Graphs
+ * Author: Nuno Lucio
+ **********/
+
 #ifndef GRAPH_FACTORY_HPP
 #define GRAPH_FACTORY_HPP
 

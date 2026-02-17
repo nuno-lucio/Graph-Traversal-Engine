@@ -1,3 +1,8 @@
+/**********
+ * Produces Graphs from file
+ * Author: Nuno Lucio
+ **********/
+
 #ifndef GRAPH_FILE_FACTORY_HPP
 #define GRAPH_FILE_FACTORY_HPP
 
@@ -10,7 +15,7 @@ class GraphFileFactory : public GraphFactory
     std::string filename;
 
     public:
-    explicit GraphFileFactory(const std::string &filename) : filename(std::move(filename)) {}
+    explicit GraphFileFactory(std::string &filename) : filename(std::move(filename)) {}
     Graph createGraph() override;
 };
 
