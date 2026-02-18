@@ -55,7 +55,7 @@ void DFS::execute(const Graph& graph, Vertex startVertex)
     unsigned int current_time = 0;
     const unsigned int nVertices = graph.getNumberOfVertices();
 
-    // Initiliaze
+    // Initialize
     discoveryTimes.assign(nVertices, NOT_VISITED);
     finalTimes.assign(nVertices, NOT_VISITED);
     parents.assign(nVertices, NO_PARENT);

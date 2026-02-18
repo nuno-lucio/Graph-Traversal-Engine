@@ -12,7 +12,6 @@
 #include <ostream>
 
 constexpr unsigned int NO_PARENT = std::numeric_limits<Vertex>::max();
-constexpr unsigned int NOT_VISITED = 0;
 
 class Display;
 

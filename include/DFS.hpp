@@ -12,6 +12,7 @@
 using Index = unsigned int;
 
 constexpr unsigned int START_INDEX = 0;
+constexpr unsigned int NOT_VISITED = 0;
 
 class DFS : public GraphAlgorithm
 {
