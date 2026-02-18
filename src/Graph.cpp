@@ -4,6 +4,7 @@
  **********/
 
 #include "Graph.hpp"
+#include <algorithm>
 
 unsigned int Graph::getNumberOfVertices() const
 {
@@ -40,28 +41,12 @@ void Graph::addEdge(Vertex from, Vertex to)
 
 void Graph::removeEdge(Vertex from, Vertex to)
 {
-    for(std::vector<Vertex>::iterator it = adjacencyList[from].begin(); it != adjacencyList[from].end();)
-    {
-        if(*it == to)
-        {
-            it = adjacencyList[from].erase(it);
-            continue;
-        }
-
-        it++;
-    }
+    adjacencyList[from].erase(std::remove(adjacencyList[from].begin(), adjacencyList[from].end(), to),
+        adjacencyList[from].end());
 
     if(!isDirected)
     {
-        for(std::vector<Vertex>::iterator it = adjacencyList[to].begin(); it != adjacencyList[to].end();)
-        {
-            if(*it == from)
-            {
-                it = adjacencyList[to].erase(it);
-                continue;
-            }
-
-            it++;
-        }   
+        adjacencyList[to].erase(std::remove(adjacencyList[to].begin(), adjacencyList[to].end(), from),
+            adjacencyList[to].end());
     }
 }

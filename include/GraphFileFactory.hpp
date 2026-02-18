@@ -15,7 +15,7 @@ class GraphFileFactory : public GraphFactory
     std::string filename;
 
     public:
-    explicit GraphFileFactory(std::string &filename) : filename(std::move(filename)) {}
+    explicit GraphFileFactory(std::string filename) : filename(std::move(filename)) {}
     Graph createGraph() override;
 };
 
