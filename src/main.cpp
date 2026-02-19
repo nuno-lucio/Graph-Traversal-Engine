@@ -3,14 +3,14 @@
  * Author: Nuno Lucio
  **********/
 
-#include "../include/Graph.hpp"
-#include "../include/GraphFactory.hpp"
-#include "../include/GraphStdinFactory.hpp"
-#include "../include/GraphFileFactory.hpp"
-#include "../include/GraphAlgorithm.hpp"
-#include "../include/DFS.hpp"
-#include "../include/BFS.hpp"
-#include "../include/Display.hpp"
+#include "Graph.hpp"
+#include "GraphFactory.hpp"
+#include "GraphStdinFactory.hpp"
+#include "GraphFileFactory.hpp"
+#include "GraphAlgorithm.hpp"
+#include "DFS.hpp"
+#include "BFS.hpp"
+#include "Display.hpp"
 #include <memory>
 #include <iostream>
 
