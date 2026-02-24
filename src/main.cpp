@@ -18,43 +18,52 @@ enum options {dfs='d', bfs='b'};
 
 int run(const char opt, const unsigned int startVertex, const std::string &filename)
 {
-    // Create graph factory
-    std::unique_ptr<GraphFactory> factory;
-
-    if(!filename.empty())
+    try
     {
-        factory = std::make_unique<GraphFileFactory>(filename);
+        // Create graph factory
+        std::unique_ptr<GraphFactory> factory;
+
+        if(!filename.empty())
+        {
+            factory = std::make_unique<GraphFileFactory>(filename);
+        }
+        else
+        {
+            factory = std::make_unique<GraphStdinFactory>();
+        }
+
+        // Produce graph
+        Graph graph = factory->createGraph();
+
+
+        if(graph.getNumberOfVertices() <= startVertex)
+        {
+            std::cout << "The selected starting vertex does not exist in the graph!" << std::endl;
+            return EXIT_FAILURE;
+        }
+
+        std::unique_ptr<GraphAlgorithm> algorithm;
+
+        // Select the chosen algorithm
+        if(opt == options::dfs)
+        {
+            algorithm = std::make_unique<DFS>();
+        }
+        else if(opt == options::bfs)
+        {
+            algorithm = std::make_unique<BFS>();
+        }
+
+        // Run algorithm and display results
+        algorithm->execute(graph, startVertex);
+        Display display;
+        algorithm->print(display, std::cout);
     }
-    else
+    catch (const std::exception &e)
     {
-        factory = std::make_unique<GraphStdinFactory>();
-    }
-
-    // Produce graph
-    Graph graph = factory->createGraph();
-
-    if(graph.getNumberOfVertices() <= startVertex)
-    {
-        std::cout << "The selected starting vertex does not exist in the graph!" << std::endl;
+        std::cout << "Error: " << e.what() << std::endl;
         return EXIT_FAILURE;
     }
-
-    std::unique_ptr<GraphAlgorithm> algorithm;
-
-    // Select the chosen algorithm
-    if(opt == options::dfs)
-    {
-        algorithm = std::make_unique<DFS>();
-    }
-    else if(opt == options::bfs)
-    {
-        algorithm = std::make_unique<BFS>();
-    }
-
-    // Run algorithm and display results
-    algorithm->execute(graph, startVertex);
-    Display display;
-    algorithm->print(display, std::cout);
 
     return EXIT_SUCCESS;
 }

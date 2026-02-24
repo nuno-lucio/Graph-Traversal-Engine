@@ -9,6 +9,12 @@
 
 void BFS::execute(const Graph& graph, Vertex startVertex)
 {
+    if(startVertex >= graph.getNumberOfVertices())
+    {
+        throw std::out_of_range("The selected starting vertex " + std::to_string(startVertex) +
+            " is invalid for the current graph.");
+    }
+
     // Initialize
     const Vertex nVertices = graph.getNumberOfVertices();
     distances.assign(nVertices, NO_DISTANCE);

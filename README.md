@@ -1,8 +1,11 @@
 # Graph Traversal Engine in C++
+[![C++ CI Pipeline](https://github.com/nuno-lucio/Graph-Traversal-Engine/actions/workflows/ci.yml/badge.svg)](https://github.com/nuno-lucio/Graph-Traversal-Engine/actions/workflows/ci.yml)
 
 This engine was designed with a modular **Object-Oriented architecture**.
 
 This project implements **iterative DFS and BFS** (Depth-First-Search and Breadth-First-Search).
+
+Project has Unit Testing.
 
 ---
 

@@ -4,8 +4,8 @@
  **********/
 
 #include "DFS.hpp"
-
 #include "Display.hpp"
+#include <stdexcept>
 
 void DFS::visit(const Graph& graph, std::stack<Frame>& stack, unsigned int& current_time)
 {
@@ -50,6 +50,12 @@ void DFS::visit(const Graph& graph, std::stack<Frame>& stack, unsigned int& curr
 
 void DFS::execute(const Graph& graph, Vertex startVertex)
 {
+    if(startVertex >= graph.getNumberOfVertices())
+    {
+        throw std::out_of_range("The selected starting vertex " + std::to_string(startVertex) +
+            " is invalid for the current graph.");
+    }
+
     std::stack<Frame> stack;
     Frame frame;
     unsigned int current_time = 0;
